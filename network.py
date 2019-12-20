@@ -1,6 +1,7 @@
 from utils import *
 import random
 
+
 class NeuralNetwork(object):
 
     def __init__(self, sizes=list(), learning_rate=1.0, mini_batch_size=16, number_of_batches=16,

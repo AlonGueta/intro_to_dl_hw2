@@ -1,3 +1,6 @@
+import multiprocessing
+
+
 class Worker(multiprocessing.Process):
     
     def __init__(self, jobs, result, training_data, batch_size):
@@ -17,7 +20,7 @@ class Worker(multiprocessing.Process):
 
     @staticmethod
     def rotate(image, angle):
-        '''Rotate given image to the given angle
+        """Rotate given image to the given angle
 
         Parameters
         ----------
@@ -25,16 +28,16 @@ class Worker(multiprocessing.Process):
             An array of size 784 of pixels
         angle : int
             The angle to rotate the image
-            
+
         Return
         ------
         An numpy array of same shape
-        '''
+        """
         raise NotImplementedError("To be implemented")
 
     @staticmethod
     def shift(image, dx, dy):
-        '''Shift given image
+        """Shift given image
 
         Parameters
         ----------
@@ -44,16 +47,16 @@ class Worker(multiprocessing.Process):
             The number of pixels to move in the x-axis
         dy : int
             The number of pixels to move in the y-axis
-            
+
         Return
         ------
         An numpy array of same shape
-        '''
+        """
         raise NotImplementedError("To be implemented")
     
     @staticmethod
     def step_func(image, steps):
-        '''Transform the image pixels acording to the step function
+        """Transform the image pixels acording to the step function
 
         Parameters
         ----------
@@ -65,12 +68,12 @@ class Worker(multiprocessing.Process):
         Return
         ------
         An numpy array of same shape
-        '''
+        """
         raise NotImplementedError("To be implemented")
 
     @staticmethod
     def skew(image, tilt):
-        '''Skew the image
+        """Skew the image
 
         Parameters
         ----------
@@ -82,11 +85,11 @@ class Worker(multiprocessing.Process):
         Return
         ------
         An numpy array of same shape
-        '''
+        """
         raise NotImplementedError("To be implemented")
 
     def process_image(self, image):
-        '''Apply the image process functions
+        """Apply the image process functions
 
         Parameters
         ----------
@@ -96,11 +99,10 @@ class Worker(multiprocessing.Process):
         Return
         ------
         An numpy array of same shape
-        '''
+        """
         raise NotImplementedError("To be implemented")
 
     def run(self):
-        '''Process images from the jobs queue and add the result to the result queue.
-        '''
+        """Process images from the jobs queue and add the result to the result queue.
+        """
         raise NotImplementedError("To be implemented")
-    
